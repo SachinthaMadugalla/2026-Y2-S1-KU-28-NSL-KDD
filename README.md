@@ -42,16 +42,6 @@ The selection and log-transform choices differ from the earlier package. Do not 
 - Final output: **120 features + binary_label**, so each saved CSV has 121 columns.
 - Every original row and its order are preserved. Test statistics never fit the scaler or select columns.
 
-## Outputs
-`results/outputs/processed_train.csv.gz` and `processed_test.csv.gz` contain the full data, not samples. `binary_label` is the target and must be excluded from X during later modeling.
-```python
-import pandas as pd
-data = pd.read_csv('results/outputs/processed_train.csv.gz')
-X = data.drop(columns='binary_label')
-y = data['binary_label']
-```
-`results/eda_visualizations/` contains seven charts. `results/logs/execution.json` records execution and checks. Each individual notebook includes its own chart and interpretation; the group notebook combines preprocessing and shows the class chart.
-
 
 ## Review and viva
 See docs/SIMPLE_VIVA_GUIDE.md. Present technique → reason → code/output → chart interpretation. All seven members have assigned sections, but actual contribution and understanding must be demonstrated personally. The supplied specification says six members; confirm approval of the seven-person roster. Prepare for 15 minutes because the review PDF also mentions 20 minutes elsewhere.
